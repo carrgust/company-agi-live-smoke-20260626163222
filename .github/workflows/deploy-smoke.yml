@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   verify-app:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, company-agi-live-smoke]
     steps:
       - uses: actions/checkout@v4
       - name: Verify smoke target
