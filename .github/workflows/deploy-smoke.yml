@@ -32,7 +32,4 @@ jobs:
             printf "run_id=%s\n" "$GITHUB_RUN_ID"
             printf "sha=%s\n" "$GITHUB_SHA"
           } > .company-agi/deploy-smoke/evidence.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: deploy-smoke-evidence
-          path: .company-agi/deploy-smoke/evidence.txt
+          test -s .company-agi/deploy-smoke/evidence.txt
