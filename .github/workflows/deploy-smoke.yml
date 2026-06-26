@@ -28,16 +28,9 @@ jobs:
           test -f README.md
           mkdir -p .company-agi/deploy-smoke
           {
-            printf 'workflow=%s
-' "${{ github.workflow }}"
-            printf 'run_id=%s
-' "${{ github.run_id }}"
-            printf 'sha=%s
-' "${{ github.sha }}"
-            printf 'bootRunId=%s
-' "${{ inputs.bootRunId }}"
-            printf 'workUnitId=%s
-' "${{ inputs.workUnitId }}"
+            printf "workflow=%s\n" "$GITHUB_WORKFLOW"
+            printf "run_id=%s\n" "$GITHUB_RUN_ID"
+            printf "sha=%s\n" "$GITHUB_SHA"
           } > .company-agi/deploy-smoke/evidence.txt
       - uses: actions/upload-artifact@v4
         with:
